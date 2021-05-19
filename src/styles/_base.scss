@@ -1,0 +1,12 @@
+$primary: #e50914;
+$secondary: #4b4b4b;
+$breakpoints: ( "tablet1": 900px, "tablet2": 790px, "phone1": 600px, "phone2": 500px, "phone3": 400px, );
+:root {
+    --primary: #{$primary};
+    --secondary: #{$secondary};
+}
+
+@mixin flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+}

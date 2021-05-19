@@ -1,0 +1,153 @@
+@use "./../../styles/base";
+.header-welcome {
+    @include base.flex(column);
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient( to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("../../assets/images/poster_welcome.jpg");
+    background-size: 100%;
+    padding: 10px 4%;
+    align-items: center;
+    nav {
+        width: 100%;
+        @include base.flex(row);
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            width: 150px;
+            @media screen and (max-width: map-get(base.$breakpoints, "phone1")) {
+                width: 105px;
+            }
+        }
+        .actions {
+            @include base.flex(row);
+            button {
+                color: #fff;
+                align-items: center;
+                height: 2.2rem;
+                font-size: 1rem;
+                margin-left: 30px;
+                @media screen and (max-width: map-get(base.$breakpoints, "phone1")) {
+                    margin-left: 10px;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+                @media screen and (max-width: map-get(base.$breakpoints, "phone1")) {
+                    height: 1.6rem;
+                    font-size: 0.9rem;
+                }
+            }
+            .change-language {
+                @include base.flex(row);
+                padding: 0px 0.2rem;
+                border: 0.02rem solid #fff;
+                gap: 0.1rem;
+                color: #fff;
+                font-size: 0.9rem;
+                .language-icon {
+                    font-size: 1rem;
+                }
+            }
+            .login {
+                padding: 0px 1rem;
+                background: base.$primary;
+                border-radius: 5px;
+            }
+        }
+    }
+    .welcome-text {
+        @include base.flex(column);
+        margin-top: 15vh;
+        color: #fff;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        .main-text {
+            font-size: 4rem;
+            max-width: 800px;
+            @media screen and (max-width: map-get(base.$breakpoints, "tablet2")) {
+                font-size: 3rem;
+            }
+            @media screen and (max-width: map-get(base.$breakpoints, "phone1")) {
+                font-size: 1.8rem;
+            }
+        }
+        .secondary-text {
+            font-size: 1.625rem;
+            margin: 1rem auto;
+            max-width: 800px;
+            font-weight: 400;
+            @media screen and (max-width: map-get(base.$breakpoints, "phone1")) {
+                font-size: 1.15rem;
+            }
+        }
+        .info-text {
+            max-width: none;
+            padding-bottom: 20px;
+            margin-top: 30px;
+            font-size: 1.2rem;
+            font-weight: 400;
+            @media screen and (max-width: map-get(base.$breakpoints, "phone1")) {
+                font-size: 1.15rem;
+                margin-top: 15px;
+                width: 70%;
+            }
+        }
+        .subscribe {
+            width: 100%;
+            @include base.flex(row);
+            justify-content: center;
+            @media screen and (max-width: map-get(base.$breakpoints, "phone1")) {
+                @include base.flex(column);
+                align-items: center;
+                gap: 15px;
+            }
+            input {
+                width: 70%;
+                color: #fff;
+                height: 4rem;
+                background: #fff;
+                color: #444;
+                padding: 0 20px;
+                @media screen and (max-width: map-get(base.$breakpoints, "tablet1")) {
+                    width: 50%;
+                }
+                @media screen and (max-width: map-get(base.$breakpoints, "phone1")) {
+                    width: 90%;
+                    height: 48px;
+                }
+                @media screen and (max-width: map-get(base.$breakpoints, "phone2")) {
+                    width: 60%;
+                }
+                @media screen and (max-width: map-get(base.$breakpoints, "phone3")) {
+                    width: 80%;
+                    height: 3rem;
+                }
+            }
+            button {
+                width: 30%;
+                color: #fff;
+                background: base.$primary;
+                height: 4rem;
+                font-size: 1.7rem;
+                &:hover {
+                    cursor: pointer;
+                    background: lighten(base.$primary, 20);
+                }
+                @media screen and (max-width: map-get(base.$breakpoints, "tablet1")) {
+                    width: 20%;
+                }
+                @media screen and (max-width: map-get(base.$breakpoints, "tablet2")) {
+                    font-size: 1.2rem;
+                }
+                @media screen and (max-width: map-get(base.$breakpoints, "phone1")) {
+                    font-size: 1rem;
+                    width: auto;
+                    padding: 0 20px;
+                    border-radius: 4px;
+                    height: 2.6rem;
+                }
+            }
+        }
+    }
+}
