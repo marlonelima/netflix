@@ -25,6 +25,9 @@ export const Navigation = () => {
           <Route exact path="/browse">
             <BrowseScreen />
           </Route>
+          <Route exact path="/loading">
+            <LoadingScreen />
+          </Route>
         </Switch>
       </Suspense>
     </Router>
