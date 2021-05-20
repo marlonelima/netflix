@@ -5,6 +5,7 @@ import { LoadingScreen } from "../pages/Loading";
 
 const WelcomeScreen = lazy(() => import("../pages/Welcome"));
 const LoginScreen = lazy(() => import("../pages/Login"));
+const ProfileChooseScreen = lazy(() => import("../pages/ProfileChoose"));
 const BrowseScreen = lazy(() => import("../pages/Browse"));
 
 export const Navigation = () => {
@@ -17,6 +18,9 @@ export const Navigation = () => {
           </Route>
           <Route exact path="/login">
             <LoginScreen />
+          </Route>
+          <Route exact path="/choose">
+            <ProfileChooseScreen />
           </Route>
           <Route exact path="/browse">
             <BrowseScreen />

@@ -4,12 +4,28 @@ import WhoKilledSaraTitle from "./../../assets/images/whokilled/name.webp";
 
 import "./styles.scss";
 import { List } from "../../components/List";
+import { useEffect, useRef } from "react";
 
 const BrowseScreen = () => {
+  const nav = useRef<HTMLHeadElement>(null);
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      if (!nav.current) return;
+
+      if (window.pageYOffset > 30) {
+        nav.current.style.position = "fixed";
+        return (nav.current.style.background = "rgba(0,0,0,0.8)");
+      }
+
+      nav.current.style.background = "transparent";
+      return (nav.current.style.position = "inherit");
+    });
+  });
   return (
     <>
       <header>
-        <nav>
+        <nav ref={nav}>
           <div className="left">
             <img src={Logo} alt="Netflix" className="logo" />
             <ul>

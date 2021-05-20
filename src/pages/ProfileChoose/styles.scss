@@ -1,0 +1,59 @@
+@use "./../../styles/base";
+nav {
+    padding: 15px 4%;
+    width: 96vw;
+    .prof {
+        width: 100px;
+    }
+}
+
+.whoIs {
+    .text {
+        color: #fff;
+        font-size: 3vw;
+    }
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 60px;
+    @include base.flex(column);
+    align-items: center;
+    .profiles {
+        @include base.flex(row);
+        gap: 30px;
+        margin-top: 20px;
+        .profile {
+            img {
+                width: 160px;
+                border-radius: 7px;
+                border: 2px solid transparent;
+            }
+            .name {
+                color: #e0e0e0;
+                font-size: 1.3rem;
+                margin-top: 15px;
+            }
+            &:hover {
+                cursor: pointer;
+                img {
+                    border: 2px solid #ffffff;
+                }
+                .name {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: map-get(base.$breakpoints, "phone1")) {
+    nav {
+        @include base.flex(row);
+        justify-content: center;
+    }
+    .whoIs {
+        .profiles {
+            @include base.flex(column);
+        }
+    }
+}

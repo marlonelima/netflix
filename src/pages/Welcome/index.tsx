@@ -19,7 +19,7 @@ const WelcomeScreen = () => {
                 arrow_drop_down
               </span>
             </button>
-            <Link to="/login">
+            <Link to="/choose">
               <button className="login">Entrar</button>
             </Link>
           </div>
@@ -37,7 +37,9 @@ const WelcomeScreen = () => {
           </p>
           <form className="subscribe">
             <input type="email" name="email" id="email" placeholder="Email" />
-            <button>Vamos lá {">"}</button>
+            <button>
+              <Link to="/choose">Vamos lá {">"}</Link>
+            </button>
           </form>
         </div>
       </div>
