@@ -4,7 +4,7 @@ import "./styles.scss";
 
 export const LoadingScreen = () => {
   return (
-    <div className="container">
+    <div className="loading-container">
       <img src={Logo} alt="Carregando...." title="Carregando...." />
     </div>
   );

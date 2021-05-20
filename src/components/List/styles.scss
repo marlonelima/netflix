@@ -1,0 +1,84 @@
+@use "./../../styles/base";
+.container {
+    padding: 0 4%;
+    .title {
+        color: #fff;
+        line-height: 1.25vw;
+        font-size: 1.2vw;
+        font-weight: 600;
+        margin-bottom: 1vw;
+    }
+    .list {
+        @include base.flex(row);
+        gap: 5px;
+        width: 2500px;
+        height: 180px;
+        .item {
+            border-radius: 7px;
+            position: relative;
+            width: 230px;
+            .details {
+                color: #fff;
+                z-index: 15;
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0s, opacity 0.3s linear;
+                width: 310px;
+                height: 200px;
+                background: #202020;
+                margin-top: -4px;
+                position: absolute;
+                padding: 15px;
+                .options {
+                    button {
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 50%;
+                        border: 1px solid #ccc;
+                        color: #fff;
+                        margin-right: 10px;
+                        cursor: pointer;
+                        span {
+                            font-size: 1rem;
+                        }
+                        &:first-child {
+                            color: #333;
+                            background: #fff;
+                        }
+                        &:last-child {
+                            margin-right: 0;
+                            float: right;
+                        }
+                    }
+                }
+                .relevant {
+                    color: #21a738;
+                    font-weight: 600;
+                    margin-top: 20px;
+                }
+                .tags {
+                    margin-top: 20px;
+                    width: 80%;
+                }
+            }
+            img {
+                width: 220px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: 0.3s;
+            }
+            &:hover {
+                z-index: 20;
+                .details {
+                    visibility: visible;
+                    opacity: 1;
+                }
+                img {
+                    width: 310px;
+                    position: relative;
+                }
+            }
+        }
+    }
+}

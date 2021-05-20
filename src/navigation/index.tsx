@@ -5,6 +5,7 @@ import { LoadingScreen } from "../pages/Loading";
 
 const WelcomeScreen = lazy(() => import("../pages/Welcome"));
 const LoginScreen = lazy(() => import("../pages/Login"));
+const BrowseScreen = lazy(() => import("../pages/Browse"));
 
 export const Navigation = () => {
   return (
@@ -16,6 +17,9 @@ export const Navigation = () => {
           </Route>
           <Route exact path="/login">
             <LoginScreen />
+          </Route>
+          <Route exact path="/browse">
+            <BrowseScreen />
           </Route>
         </Switch>
       </Suspense>

@@ -1,0 +1,135 @@
+@use "./../../styles/base";
+header {
+    width: 100%;
+    height: 45vw;
+    background: linear-gradient( to bottom, #141414, transparent, transparent, #141414), url("./../../assets/images/whokilled/bg.webp") 0 -10% no-repeat;
+    background-size: cover;
+    nav {
+        z-index: 10;
+        @include base.flex(row);
+        width: 100%;
+        height: 70px;
+        align-items: center;
+        padding: 0 4%;
+        justify-content: space-between;
+        .left {
+            @include base.flex(row);
+            align-items: center;
+            .logo {
+                width: 100px;
+                margin-right: 40px;
+            }
+            ul {
+                @include base.flex(row);
+                li {
+                    margin-right: 18px;
+                    color: #e5e5e5;
+                    font-size: 0.9rem;
+                    transition: 0.3s;
+                    &:hover {
+                        filter: brightness(0.8);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .right {
+            @include base.flex(row);
+            button {
+                color: #fff;
+                cursor: pointer;
+                border: red;
+                margin-left: 30px;
+                &:last-child {
+                    margin-left: 6px;
+                }
+            }
+            .search-area {
+                @include base.flex(row);
+                align-items: center;
+            }
+        }
+    }
+    .call {
+        @include base.flex(column);
+        color: #fff;
+        padding: 5vw 4%;
+        width: 45%;
+        max-width: 680px;
+        img {
+            width: 35vw;
+        }
+        >span {
+            font-size: 1.6vw;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        .synopsis {
+            font-size: 1.3vw;
+            font-weight: 500;
+            margin-top: 1vw;
+            letter-spacing: 0.05rem;
+        }
+        .actions {
+            @include base.flex(row);
+            margin-top: 2vw;
+            button {
+                @include base.flex(row);
+                color: #fff;
+                align-items: center;
+                justify-content: center;
+                padding: 0.6vw 1.5vw;
+                font-weight: 600;
+                font-size: 1.2vw;
+                border-radius: 7px;
+                span {
+                    padding-right: 10px;
+                    font-size: 2vw;
+                }
+                transition: 0.3s;
+                &:hover {
+                    filter: brightness(0.8);
+                    cursor: pointer;
+                }
+            }
+            .watch-now {
+                background: #fff;
+                color: #444;
+                margin-right: 15px;
+            }
+            .more-info {
+                background-color: rgba(109, 109, 110, 0.7);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: map-get(base.$breakpoints, "tablet1")) {
+    header {
+        nav {
+            .left {
+                ul {
+                    display: none;
+                }
+            }
+        }
+        .call {
+            width: 60%;
+            .actions {
+                button {
+                    padding: 0.3vw 1.5vw;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: map-get(base.$breakpoints, "tablet2")) {
+    .content {
+        margin-top: 50px;
+    }
+}
+
+body {
+    padding-bottom: 100px;
+}
